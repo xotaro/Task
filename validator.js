@@ -1,7 +1,7 @@
 const Joi = require("@hapi/joi");
 const validateUPS = (data) => {
     const schema = Joi.object({
-        service:Joi.string.valid('UPSExpress', 'UPS2DAY').required(),
+        service:Joi.string().valid('UPSExpress', 'UPS2DAY').required(),
         width: Joi.object({
             value: Joi.number().required(),
             unit: Joi
