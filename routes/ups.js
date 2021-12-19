@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const validateUPS = require('../validator').validateUPS;
 
-router.post('/', async (req, res) => {
+router.post('/',  (req, res) => {
     const { error } = validateUPS(req.body);
     if (error) return res.status(400).send(error.details[0].message);
     var shipment = {

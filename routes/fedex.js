@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const validateFEDEX = require('../validator').validateFEDEX;
 
-router.post('/', async (req, res) => {
+router.post('/',  (req, res) => {
     const { error } = validateFEDEX(req.body);
     if (error) return res.status(400).send(error.details[0].message);
     var shipment = {
