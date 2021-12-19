@@ -11,6 +11,6 @@ router.post('/', async (req, res) => {
         "height": req.body.height,
         "weight": req.body.weight,
     }
-    return res.send(shipment);
+    return res.status(201).send("shipment has been placed successfully");
 })
 module.exports = router;
